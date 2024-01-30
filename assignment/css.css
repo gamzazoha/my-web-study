@@ -1,0 +1,229 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #eeeeee;
+    height: 100%;
+}
+
+h3 {
+    margin: 0;
+}
+
+.box {
+    box-sizing: border-box;
+    width: 50%; height: 200px;
+    margin: 13px;
+    padding: 18px;
+    background-color: white;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 4px 3px rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+}
+
+#color-window {
+    /* display: flex; */
+    position: fixed;
+    box-sizing: border-box;
+    left: 50%; transform: translate(-50%, 0);
+    top: 10px;
+    width: 98%; height: 55px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white; font-size: 20px; font-weight: 600;
+    line-height: 55px; padding-left: 15px;
+    opacity: 0;
+}
+
+.pop-effect {
+    animation: fade 3s;
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    40% {opacity: 1;}
+    60% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.progress.box{
+    width: 35%; height: 280px;
+}
+
+.progress-chart {
+    margin-top: 50px;
+}
+
+.progress-case {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px; padding-right:20px;
+}
+
+.percent {
+    position: relative;
+    width: 150px; height: 15px;
+    border-radius: 30px;
+    background-color: #eeeeee;
+}
+
+.percent-bar {
+    position: absolute;
+    width: 80%; height: 15px;
+    border-radius: 30px;
+    background: linear-gradient( to right, #af99fc, #79d6eb);
+    animation: fill 1.5s;
+}
+
+@keyframes fill {
+    0% {width: 0;}
+    100% {width: 80%;}
+}
+
+.donut.box {
+    height: 280px;
+}
+
+.donut-chart {
+    position: relative;
+    width: 200px; height: 200px;
+    margin-top: 10px;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    display: inline-block;
+}
+
+.donut-chart:after {
+    content: '';
+    background-color: white;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chart-bar {
+    width: inherit; height: inherit;
+    border-radius: 50%;
+    background: conic-gradient(#af99fc, #79d6eb 150deg,#eeeeee 90deg);
+}
+
+.toggle.box {
+    width: 35%; height: 380px;
+}
+
+#toggle-menu {
+    background-color: #eeeeee;
+    width: 100%; height: 50px;
+    margin-top: 20px;
+}
+
+#drop-btn {
+    cursor: pointer;
+    width: 35px; height: 30px;
+    border: none;
+    margin: 10px;
+    background-color: rgb(170, 155, 254);
+}
+
+#drop-content {
+    position: relative;
+}
+
+#drop-content a {
+    display: block;
+    box-sizing: border-box;
+    width: 100%; height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid rgb(166, 166, 166);
+    animation: dropDown 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+@keyframes dropDown {
+    0% {height: 0; opacity: 0;}
+    100% {height: maxHeight; opacity: 1;}
+}
+
+#drop-content a:last-child {
+    border-bottom: none;
+}
+
+#drop-content.hidden {
+    /* animation: dropUp 0.5s ease-in-out; */
+    display: none;
+}
+/* 
+@keyframes dropUp {
+    0% {height: maxHeight;}
+    100% {height: 0;}
+} */
+
+.carousel.box {
+    width: 50%; height: 380px;
+}
+
+.slide-box {
+    padding-top: 20px;
+    height: 100%;
+    position: relative;
+}
+
+.image {
+    width: 100%; height: 100%;
+}
+
+.prev, .next {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 40%;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.button.box {
+    width: 35%; height: 110px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 160px; height: 28px;
+    margin-top: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 50px; height: 28px;
+    color: white;
+    font-size: 14px;
+    /* 제대로 정렬이 안될수도? */
+    text-align: center;
+    line-height: 28px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn.red {
+    background-color: red;
+}
+
+.btn.blue {
+    background-color: blue;
+}
+
+.btn.green {
+    background-color: green;
+}

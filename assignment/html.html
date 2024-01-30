@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="source.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div id="color-window"></div>
+    <div class="progress box">
+        <h3>Progress chart</h3>
+        <div class="progress-chart">
+            <div class="progress-case">
+                <div>HTML/CSS</div>
+                <div class="percent">
+                    <div class="percent-bar"></div>
+                </div>
+            </div>
+            <div class="progress-case">
+                <div>JavaScript</div>
+                <div class="percent">
+                    <div class="percent-bar"></div>
+                </div>
+            </div>
+            <div class="progress-case">
+                <div>Sass</div>
+                <div class="percent">
+                    <div class="percent-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="donut box">
+        <h3>Dount chart</h3>
+        <div class="donut-chart">
+            <div class="chart-bar" data-deg="57"></div>
+        </div>
+    </div>
+    <div class="toggle box">
+        <h3>Toggle Menu</h3>
+        <div id="toggle-menu">
+            <button type="button" id="drop-btn">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </button>
+            <div id="drop-content" class="hidden">
+                <a href="#">1번 메뉴</a>
+                <a href="#">2번 메뉴</a>
+                <a href="#">3번 메뉴</a>
+            </div>
+        </div>
+    </div>
+    <div class="carousel box">
+        <h3>Carousel</h3>
+        <div class="slide-box">
+            <div class="frame">
+                <div class="slide">
+                    <img src="image/pic3.webp" class="image">
+                </div>
+            </div>
+            <div class="frame">
+                <div class="slide">
+                    <img src="image/pic4.webp" class="image">
+                </div>
+            </div>
+            <div class="frame">
+                <div class="slide">
+                    <img src="image/pic5.webp" class="image">
+                </div>
+            </div>
+            <button type="button" class="prev arrow">
+                <span class="material-symbols-outlined">
+                    arrow_back_ios
+                </span>
+            </button>
+            <button type="button" class="next arrow">
+                <span class="material-symbols-outlined">
+                    arrow_forward_ios
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="button box">
+        <h3>Alert Buttons</h3>
+        <div class="buttons">
+            <input type="button" class="btn red" name="red btn" value="빨강">
+            <input type="button" class="btn green" name="green btn" value="초록">
+            <input type="button" class="btn blue" name="blue btn" value="파랑">
+        </div>
+    </div>
+    
+    <script src="javaScript.js" type="module"></script>
+</body>
+</html>
