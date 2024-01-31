@@ -1,9 +1,28 @@
+// progress chart
+fetch('https://shopping-mall-rzdwe.run.goorm.site/data')
+    .then((response)=>response.json())
+    .then((data)=>{
+    console.log(data);
+    var progressNum=document.getElementsByClassName("number");
+    var barSize=document.getElementsByClassName("percent-bar");
+
+    for(var i=0; i<data.progress.length; i++){
+        progressNum[i].innerHTML=data.progress[i]+"%";
+        barSize[i].style.width=data.progress[i]+"%";
+        barSize[i].style.setProperty("--size",data.progress[i]+"%");
+    }
+});
+
 // toggle menu
 var toggleBtnClk=document.getElementById("drop-btn");
 
 function menu(){
     let click=document.getElementById("drop-content");
     click.classList.toggle("hidden");
+
+    // click.classList.remove("dropDown-effect");
+    // void click.offsetWidth;
+    // click.classList.add("dropDown-effect");
 }
 
 toggleBtnClk.addEventListener('click', menu);
@@ -17,12 +36,11 @@ var maxHeight=Array.from(menuItems).reduce(function(maxHeight, menuItems) {
 
 dropContent.style.setProperty("maxHeight", maxHeight+"px")
 
-// carousel menue
+// new carousel
 var arrow=document.getElementsByClassName("arrow");
-var page=document.getElementsByClassName("frame");
-var pageIdx=2;
-var n;
-showSlide(pageIdx);
+var size=document.getElementsByClassName("slide");
+var page=document.getElementsByClassName("frame")[0];
+var pageIdx=1; var n;
 
 function plusSlides() {
     if(this.classList.contains("prev")){
@@ -31,25 +49,20 @@ function plusSlides() {
     if(this.classList.contains("next")){
         n=1;
     }
-    showSlide(pageIdx+=n);
+    move(pageIdx+=n);
 }
 
-function showSlide(index) {
-    var i;
-    
-    if(!(index>page.length) && !(index<=0)) {
-        for(i=0;i<page.length;i++){
-            page[i].style.display="none";
-        }
-        page[pageIdx-1].style.display="block";
-    }
-
-    if(pageIdx>=page.length){
-        pageIdx=page.length;
+function move() {
+    if(pageIdx>=size.length){
+        pageIdx=size.length;
     }
     if(pageIdx<=0){
-        pageIdx=1
+        pageIdx=1;
     }
+
+    var translationValue = ((-20) * (pageIdx - 1)) + '%';
+    // console.log(translationValue);
+    page.style.transform = `translate(${translationValue})`;    
 }
 
 arrow[0].addEventListener('click', plusSlides);
