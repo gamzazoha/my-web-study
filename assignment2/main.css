@@ -20,6 +20,7 @@ body {
 
 #top-image-container {
     background-color: #BFD9F4;
+    top: 0;
     display: flex;
     justify-content: flex-end;
     position: sticky;
