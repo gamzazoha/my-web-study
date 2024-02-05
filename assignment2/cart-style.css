@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BookkGothic-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkGothic-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: "BookkMyungjo-Bd";
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+body > div {
+    height: 100%;
+}
+
+.top-container {
+    background-color: #f4ede8;
+}
+
+.top-container > a {
+    text-decoration: none;
+}
+
+.top-container > a > p {
+    font-size: 20px;
+    color: #0b0014;
+    transform: translateX(5vw);
+}
+
+.cart-container {
+    margin: auto;
+    width: 80%; height: 30vw;
+    background-color: #f4ede8;
+    position: relative;
+}
+
+.cart-container:before {
+    content: '';
+    width: 80%; height: 1px;
+    position: absolute;
+    background-color: #0b0014;
+    justify-content: center;
+    transform: translate(10%);
+}
+
+.cart-container > p {
+    text-align: center;
+    height: 2em;
+    padding-top: 10px;
+}
+
+.products-container {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.products-container > ul {
+    padding: 0;
+}
+
+.item {
+    list-style: none;
+    background-color: #eaddd7;
+}
+
+.payment-container {
+    background-color: #eaddd7;
+    width: 80%; height: 10vh;
+    margin: auto;
+}
+
+.bill-container {
+    display: block;
+    transform: translate(380%, 1vh);
+    background-color: #fffcfb;
+    width: 20%;
+    /* border: red 3px solid; */
+}
+
+.bill {
+    margin-top: 0;
+    display: block;
+    text-align: center;
+}
+
+.pay {
+    font-family: "BookkMyungjo-Bd";
+    font-size: 18px;
+    border: none;
+    display: block;
+    margin: auto;
+    background-color: #f4ede8;
+    border-radius: 5px;
+    width: 5em; height: 2em;
+}
+
+.pay:hover {
+    cursor: pointer;
+    background-color: #eaddd7;
+}
