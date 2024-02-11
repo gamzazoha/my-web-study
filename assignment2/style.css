@@ -159,6 +159,24 @@ body {
     background-color: #eaddd7;
 }
 
+#add-container {
+    text-align: center;
+}
+
+.add {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    background-color: #f5e9e2;
+    /* display: flex;
+    justify-content: center; */
+    /* text-align: center; */
+}
+
+.add:hover {
+    background-color: #eaddd7;
+}
+
 .ask {
     cursor: pointer;
     position: fixed;
