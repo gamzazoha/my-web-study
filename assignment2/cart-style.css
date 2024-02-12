@@ -94,7 +94,7 @@ body > div {
 
 .payment-container {
     background-color: #eaddd7;
-    width: 80%;
+    width: 80%; height: 80px;
     margin: auto;
 }
 
@@ -103,7 +103,6 @@ body > div {
     transform: translate(380%, 1vh);
     background-color: #fffcfb;
     width: 20%;
-    /* border: red 3px solid; */
 }
 
 .bill {
