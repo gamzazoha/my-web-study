@@ -44,7 +44,8 @@ function Delete() {
     const info = JSON.parse(localStorage.getItem(keyValue));
     const delPrice = Number(info.price.substring(1,));
 
-    priceP.textContent = (price - delPrice) + "원";
+    price = price - delPrice;
+    priceP.textContent = price + "원";
     window.localStorage.removeItem(keyValue);
     parentDiv.remove();
 };
