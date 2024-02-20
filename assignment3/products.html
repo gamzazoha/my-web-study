@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온라인 서점</title>
+    <link href="style.css" rel="stylesheet">
+    <!-- <link href="newStyle.css" rel="stylesheet"> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div>
+        <div id="top-image-container">
+            <img src="https://contents.kyobobook.co.kr/pmtn/2022/book/221012_sapiens/bnD_e01_01.jpg" class="top image">
+        </div>
+        <div id="menu-container">
+            <ul id="menu-ul">
+                <li><a href="#none" class="menu">베스트 셀러</a></li>
+                <li><a href="#none" class="menu">사회</a></li>
+                <li><a href="#none" class="menu">과학</a></li>
+                <li><a href="#none" class="menu">인문</a></li>
+                <li><a href="cart.html" class="menu">장바구니</a></li>
+            </ul>
+        </div>
+        <div id="products-container">
+            <div class="product">
+                <img>
+                <a class="book-info-page" href="#none"><p class="title">title</p></a>
+                <p class="author"></p>
+                <div class="buy">
+                    <p class="price">$1000</p>
+                    <button type="button" class="button">
+                        <span class="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+                        장바구니
+                    </button>
+                </div>
+            </div>
+            <div class="product">
+                <img>
+                <a class="book-info-page" href="#none"><p class="title">title</p></a>
+                <p class="author"></p>
+                <div class="buy">
+                    <p class="price">$2000</p>
+                    <button type="button" class="button">
+                        <span class="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+                        장바구니
+                    </button>
+                </div>
+            </div>
+            <div class="product">
+                <img>
+                <a class="book-info-page" href="#none"><p class="title">title</p></a>
+                <p class="author"></p>
+                <div class="buy">
+                    <p class="price">$3000</p>
+                    <button type="button" class="button">
+                        <span class="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+                        장바구니
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="add-container">
+            <button type="button" class="add">
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+            </button>
+        </div>
+        <div class="ask">
+            <button>
+                <span class="material-symbols-outlined">
+                    contact_support
+                </span>
+            </button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

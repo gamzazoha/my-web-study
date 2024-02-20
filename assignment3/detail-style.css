@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.menu-container > hr {
+    margin-bottom: 20px;
+}
+
+#menu-bar {
+    margin: 0;
+    margin-left: 30px;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#menu-bar > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+.detail-container {
+    margin: 0px 400px 0px 400px;
+    display: flex;
+}
+
+#image {
+    margin-top: 60px;
+}
+
+#text {
+    margin-left: 80px;
+    display: inline-block;
+}
+
+#text > hr {
+    margin: 0;
+    margin-bottom: 10px;
+    border: none;
+    border-top: 1px solid #A2A2A2;
+}
+
+#title {
+    font-weight: 500;
+    font-size: 30px;
+    margin: 0;
+    margin-top: 50px;
+    color: black;
+}
+
+#author-price-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#author {
+    margin: 0;
+    display: inline-block;
+}
+
+#price {
+    margin: 0;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+#info {
+    word-break: keep-all;
+}
+
+@media screen and (max-width: 1500px){
+    .detail-container {
+        margin: 0px 200px 0px 200px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .detail-container {
+        margin: 0px 50px 0px 50px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .detail-container {
+        margin: 0;
+    }
+
+    #text {
+        margin: 0;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .detail-container {
+        margin: 0;
+        display: unset; /* flex 취소 */
+    }
+
+    #pic {
+        display: flex;
+        justify-content: center;
+    }
+
+    #image {
+        margin: 0;
+        max-width: 200px;
+        width: 80%;
+    }
+
+    #text {
+        margin: 0;
+    }
+
+    #title {
+        margin-top: 10px;
+    }
+}

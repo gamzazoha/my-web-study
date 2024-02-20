@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.top-container > a {
+    text-decoration: none;
+}
+
+.top-container > a > p {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0px 10px 30px;
+}
+
+.top-container > a > p:hover{
+    text-decoration: underline;
+}
+
+.top-container > hr {
+    margin: 0;
+}
+
+#root-box {
+    width: 80%;
+    /* border: red 3px solid; */
+}
+
+.cart-container {
+    /* border: red 3px solid; */
+}
+
+.cart-container > p {
+    text-align: center;
+    margin: 0;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.cart-container > hr {
+    width: 80%;
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+}
+
+#item-box {
+    width: 80%;
+    padding: 0;
+    /* border: red 3px solid; */
+}
+
+.product-box {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    /* border: red 3px solid; */
+}
+
+.product-img {
+    width: 13%; height: 12vw;
+    object-fit: cover;
+}
+
+.item {
+    /* border: red 3px solid; */
+    margin-left: 10px;
+    list-style: none;
+}
+
+.delete {
+    font-family: "Noto Sans KR", sans-serif;
+    border: none;
+    border-radius: 3px;
+    background-color:transparent;
+    padding: 0;
+
+    transform: translateY(1px);
+
+    /* icon 정렬 */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.delete:hover {
+    background-color: #bebebe;
+}
+
+.payment-container {
+    /* border: red 3px solid; */
+}
+
+.payment-container > hr {
+    width: 80%;
+}
+
+.bill-container {
+    /* border: red 3px solid; */
+    display: flex;
+    margin-right: 30px;
+    justify-content: flex-end;
+}
+
+.bill-container > p {
+    margin: 0;
+}
+
+.pay-container {
+    /* border: red 3px solid; */
+    display: flex;
+    justify-content: center;
+}
+
+.pay {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+    background-color:transparent;
+    cursor: pointer;
+}
+
+.pay:hover {
+    background-color: #bebebe;
+}
+
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+body > div {
+    height: 100%;
+}
+
+.top-container {
+    background-color: #f4ede8;
+}
+
+.top-container > a {
+    text-decoration: none;
+}
+
+.top-container > a > p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #0b0014;
+    transform: translateX(5vw);
+}
+
+.cart-container {
+    margin: auto;
+    padding-bottom: 30px;
+    width: 80%; min-height: 30vw;
+    background-color: #f4ede8;
+    position: relative;
+}
+
+.cart-container:before {
+    content: '';
+    width: 80%; height: 1px;
+    position: absolute;
+    background-color: #0b0014;
+    justify-content: center;
+    transform: translate(10%);
+}
+
+.cart-container > p {
+    text-align: center;
+    font-weight: 500;
+    height: 2em;
+    padding-top: 10px;
+}
+
+.products-container {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+#item-box {
+    margin: 0;
+    padding: 30px 30px;
+}
+
+.delete {
+    padding: 0;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+    background-color:transparent;
+    transform: translateY(6px);
+}
+
+.product-box {
+    margin-bottom: 5px;
+}
+
+.product-box > li {
+    display: inline;
+}
+
+.product-img {
+    margin: auto;
+    display: block;
+    width: 10%;
+}
+
+.material-symbols-outlined {
+    color: #0b0014;
+}
+
+.material-symbols-outlined:hover {
+    color: grey;
+}
+
+#item-box {
+    list-style: none;
+    background-color: #eaddd7;
+}
+
+.payment-container {
+    background-color: #eaddd7;
+    width: 80%; height: 80px;
+    margin: auto;
+}
+
+.payment-container > hr {
+    margin: 0;
+    border: none;
+    border-top: 1px solid black;
+}
+
+.bill-container {
+    display: block;
+    transform: translate(380%, 1vh);
+    background-color: #fffcfb;
+    width: 20%;
+}
+
+.bill {
+    margin-top: 0;
+    display: block;
+    text-align: center;
+}
+
+.pay {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 18px;
+    border: none;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #f4ede8;
+    border-radius: 5px;
+    width: 5em; height: 2em;
+}
+
+.pay:hover {
+    cursor: pointer;
+    background-color: #eaddd7;
+}
+*/

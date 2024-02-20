@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #0b0014;
+    margin: 0;
+}
+
+#top-image-container {
+    background-color: #BFD9F4;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    z-index: 0;
+}
+
+.top.image {
+    max-width: 100%; height: auto;
+}
+
+#menu-container {
+    width: 100%; height: 50px;
+    margin: 0;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    /* float: right; */
+}
+
+#menu-container > ul {
+    width: 400px;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    float: right;
+    justify-content: space-around;
+    transform: translateX(-20%);
+}
+
+#menu-container > ul > li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+
+#menu-container > ul > li:after {
+    content: '';
+    width: 1px; height: 80%;
+    position: absolute;
+    background-color: #0b0014;
+    transform: translate(10px, 20%);
+}
+
+#menu-container > ul > li:last-child:after {
+    display: none;
+}
+
+.menu {
+    color: #0b0014;
+    text-decoration: none;
+}
+
+#products-container {
+    clear: both;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    justify-items: center;
+    padding-left: 20%; padding-right: 20%;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+}
+
+.product {
+    /* display: block; */
+    box-sizing: border-box;
+    width: 1fr;
+    padding: 30px;
+    text-align: center;
+    /* background-color: #f5e9e2; */
+    /* border: red 3px solid; */
+}
+
+.product > a {
+    text-decoration: none;
+}
+
+.title {
+    margin-top: 0; margin-bottom: 10px;
+    margin-left: auto; margin-right: auto;
+    text-align: center;
+    width: 200px;
+    font-size: 16px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #0b0014;
+    /* text-decoration: underline;
+    text-underline-position: under; */
+}
+
+.title:hover {
+    text-decoration: underline;
+}
+
+.product > img {
+    width: 200px; height: 300px;
+    object-fit: cover;
+    border: #eaddd7 20px solid;
+}
+
+.author {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.buy {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* display: inline-block; */
+    /* height: 30%; */
+    padding-bottom: 5px;
+    border-bottom: #0b0014 1px solid;
+}
+
+.buy > p {
+    font-family: "Noto Sans KR", sans-serif;
+    margin: 0;
+    display: inline-block;
+}
+
+.buy > button {
+    font-family: "Noto Sans KR", sans-serif;
+    /* width: auto; height: 30%; */
+    border: none; border-radius:5px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #f5e9e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy > button:hover {
+    background-color: #eaddd7;
+}
+
+#add-container {
+    text-align: center;
+}
+
+.add {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    background-color: #f5e9e2;
+    /* display: flex;
+    justify-content: center; */
+    /* text-align: center; */
+}
+
+.add:hover {
+    background-color: #eaddd7;
+}
+
+.ask {
+    cursor: pointer;
+    position: fixed;
+    right: 30px; bottom: 30px;
+    background-color: #f5e9e2;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    display: flex;
+    text-align: center; justify-content: center;
+}
+
+.ask > button {
+    border: none;
+    background: none;
+    width: inherit; height: inherit;
+    border-radius: 50%;
+}
+
+.ask:hover {
+    background-color: #eaddd7;
+}
+
+.ask > span {
+    color: #0b0014;
+    /* font-size: 50px; */
+}
