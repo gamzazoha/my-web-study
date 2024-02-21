@@ -15,6 +15,10 @@ for(let i=0;i<dataOfItem.length;i++){
             const newImg = document.createElement("img");
             newImg.className = "product-img";
             newImg.src = result.imagePath;
+
+            const infoDiv = document.createElement("div");
+            infoDiv.className = "info-box";
+
             const newLi = document.createElement("li");
             newLi.className = `item ${result.price}`;
             const newBtn = document.createElement("button");
@@ -25,8 +29,9 @@ for(let i=0;i<dataOfItem.length;i++){
 
             newBtn.appendChild(newIcon);
             divNode.appendChild(newImg);
-            divNode.appendChild(newLi);
-            divNode.appendChild(newBtn);
+            infoDiv.appendChild(newLi);
+            infoDiv.appendChild(newBtn);
+            divNode.appendChild(infoDiv);
             ulNode.appendChild(divNode);
 
             price = price + Number(result.price);
@@ -48,15 +53,13 @@ const parentUl = document.getElementById("item-box");
 const childLi = document.getElementsByClassName("item");
 
 function Delete() {
-    const parentDiv = this.parentElement;
+    const parentDiv = this.parentElement.parentElement;
     const priceValue = parentDiv.querySelector(".item");
     const delPrice = priceValue.classList[1];
     console.log(delPrice);
 
     let ListOFItem = JSON.parse(localStorage.getItem("itemList"));
-    let updateItem;
-
-    ListOFItem.splice($(this.parentElement).index(), 1);
+    ListOFItem.splice($(this.parentElement.parentElement).index(), 1);
     localStorage.setItem("itemList", JSON.stringify(ListOFItem));
 
     price = price - delPrice;

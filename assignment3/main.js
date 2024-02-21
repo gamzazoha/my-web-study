@@ -113,7 +113,7 @@ const staticParent = document.querySelector("#products-container");
 const dynamicChild = document.getElementsByClassName("product");
 
 staticParent.addEventListener(("mousemove"), (e) => {
-    for(let i=dynamicChild.length - 3;i<dynamicChild.length;i++){
+    for(let i=0;i<dynamicChild.length;i++){
         //상세 페이지 이동
         const detailFunctionAdd = e.currentTarget.children[i].querySelector(".title");
         detailFunctionAdd.addEventListener("click", function() {

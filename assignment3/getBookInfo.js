@@ -1,3 +1,4 @@
+//책 정보 가져오기
 const URLSearch = new URLSearchParams(location.search);
 const id = URLSearch.get("book");
 
@@ -17,5 +18,21 @@ $.ajax({
     },
     error: function(error) {
         console.log("Error :", error);
+    }
+});
+
+//장바구니 추가
+const cartAddBtn = document.querySelector("#add-cart-btn");
+let items = []
+
+cartAddBtn.addEventListener("click", () => {
+    if(localStorage.itemList == undefined){
+        items.push(id);
+        localStorage.setItem("itemList", JSON.stringify(items));
+    }
+    else {
+        let items = JSON.parse(localStorage.getItem("itemList"));
+        items.push(id);
+        localStorage.setItem("itemList", JSON.stringify(items));
     }
 });
