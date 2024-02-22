@@ -23,6 +23,11 @@ body {
     background-color: #FFFFFF;
 }
 
+.ask {
+    z-index: 1;
+}
+/* *** */
+
 #top-image-container {
     background-color: #BFD9F4;
     top: 0;

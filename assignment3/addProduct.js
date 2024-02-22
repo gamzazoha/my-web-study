@@ -4,48 +4,61 @@ let price = 0;
 
 dataOfItem = JSON.parse(localStorage.getItem("itemList"));
 
-for(let i=0;i<dataOfItem.length;i++){
-    $.ajax({
-        url: "http://43.203.50.204:8080/api/books?id=" + dataOfItem[i],
-        method: "GET",
-        async:false,
-        success: function (result) {
-            const divNode = document.createElement("div");
-            divNode.className = `product-box ${dataOfItem[i]}`;
-            const newImg = document.createElement("img");
-            newImg.className = "product-img";
-            newImg.src = result.imagePath;
+// 장바구니에 들어왔을때 상품이 없으면 문구 생성
+if(dataOfItem == null || dataOfItem.length == 0){
+    const noItemP = document.createElement("p");
+    noItemP.id = "noItem";
+    noItemP.innerText = "아직 고른 책이 없어요.";
 
-            const infoDiv = document.createElement("div");
-            infoDiv.className = "info-box";
+    console.log(noItemP);
 
-            const newLi = document.createElement("li");
-            newLi.className = `item ${result.price}`;
-            const newBtn = document.createElement("button");
-            newBtn.className = "delete";
-            const newIcon = document.createElement("span");
-            newIcon.className = "material-symbols-outlined";
-            newIcon.textContent = "close";
+    const productsContainer = document.querySelector(".products-container");
+    productsContainer.appendChild(noItemP);
+}
 
-            newBtn.appendChild(newIcon);
-            divNode.appendChild(newImg);
-            infoDiv.appendChild(newLi);
-            infoDiv.appendChild(newBtn);
-            divNode.appendChild(infoDiv);
-            ulNode.appendChild(divNode);
-
-            price = price + Number(result.price);
-            console.log(price);
-            newLi.textContent = result.title + " - " + result.author + ", ₩" + result.price;
-        },
-        error: function(error) {
-            console.log("Error :", error);
+if(dataOfItem != null){
+    for(let i=0;i<dataOfItem.length;i++){
+        $.ajax({
+            url: "http://43.203.50.204:8080/api/books?id=" + dataOfItem[i],
+            method: "GET",
+            async:false,
+            success: function (result) {
+                const divNode = document.createElement("div");
+                divNode.className = `product-box ${dataOfItem[i]}`;
+                const newImg = document.createElement("img");
+                newImg.className = "product-img";
+                newImg.src = result.imagePath;
+    
+                const infoDiv = document.createElement("div");
+                infoDiv.className = "info-box";
+    
+                const newLi = document.createElement("li");
+                newLi.className = `item ${result.price}`;
+                const newBtn = document.createElement("button");
+                newBtn.className = "delete";
+                const newIcon = document.createElement("span");
+                newIcon.className = "material-symbols-outlined";
+                newIcon.textContent = "close";
+    
+                newBtn.appendChild(newIcon);
+                divNode.appendChild(newImg);
+                infoDiv.appendChild(newLi);
+                infoDiv.appendChild(newBtn);
+                divNode.appendChild(infoDiv);
+                ulNode.appendChild(divNode);
+    
+                price = price + Number(result.price);
+                newLi.textContent = result.title + " - " + result.author + ", ₩" + result.price;
+            },
+            error: function(error) {
+                console.log("Error :", error);
+            }
+        });
+    
+        if(i == (dataOfItem.length - 1)){
+            priceP.textContent = price + "원";
         }
-    });
-
-    if(i == (dataOfItem.length - 1)){
-        priceP.textContent = price + "원";
-    }
+    };
 };
 
 const deleteBtn = document.getElementsByClassName("delete");
@@ -56,7 +69,6 @@ function Delete() {
     const parentDiv = this.parentElement.parentElement;
     const priceValue = parentDiv.querySelector(".item");
     const delPrice = priceValue.classList[1];
-    console.log(delPrice);
 
     let ListOFItem = JSON.parse(localStorage.getItem("itemList"));
     ListOFItem.splice($(this.parentElement.parentElement).index(), 1);
@@ -65,6 +77,18 @@ function Delete() {
     price = price - delPrice;
     priceP.textContent = price + "원";
     parentDiv.remove();
+
+    //상품을 삭제했을때 더 이상 상품이 없으면 문구 생성
+    if(childLi.length == 0){
+        const noItemP = document.createElement("p");
+        noItemP.id = "noItem";
+        noItemP.innerText = "아직 고른 책이 없어요.";
+    
+        console.log(noItemP);
+    
+        const productsContainer = document.querySelector(".products-container");
+        productsContainer.appendChild(noItemP);
+    }
 };
 
 parentUl.addEventListener(("mousemove"), (e) => {
