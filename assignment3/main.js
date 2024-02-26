@@ -97,6 +97,7 @@ let itemID = [];
 function cartAdd() {
     const getElementId = this.parentNode.parentNode;
     let id = getElementId.classList[1];
+
     if(localStorage.itemList == undefined){
         itemID.push(id);
         localStorage.setItem("itemList", JSON.stringify(itemID));
@@ -124,6 +125,11 @@ staticParent.addEventListener(("mousemove"), (e) => {
         //장바구니
         const cartFunctionAdd = e.currentTarget.children[i].querySelector(".button");
         cartFunctionAdd.addEventListener("click", cartAdd);
+        cartFunctionAdd.addEventListener("click",() => {
+            // modal 보이기
+            modalFlag = 1;
+            modal.style.display = "flex";
+        });
     }
 });
 
@@ -135,3 +141,19 @@ const movePage = function(page) {
 
     window.location.href = "detail.html?" + newParam;
 }
+
+//modal
+const modal = document.querySelector(".cart-modal-container");
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+let modalFlag = 0;
+
+function cartMove() {
+    // modal 가리기
+    modalFlag = 0;
+    modal.style.display = '';
+    modal.style.display = "none";
+};
+
+noBtn.addEventListener("click", cartMove);
+yesBtn.addEventListener("click", cartMove);

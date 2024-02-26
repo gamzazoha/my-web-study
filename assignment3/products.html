@@ -10,6 +10,17 @@
 </head>
 <body>
     <div>
+        <div class="cart-modal-container">
+            <div class="cart-modal">
+                <h1 id="txt1">도서가 장바구니에 담겼습니다.</h1>
+                <p id="txt2">장바구니로 이동하시겠습니까?</p>
+                <div id="btn-box">
+                    <button type="button" class="modal-btn" id="no">취소</button>
+                    <button type="button" onclick="location.href='cart.html'" class="modal-btn" id="yes">확인</button>
+                </div>
+            </div>
+            <div class="modal-layer"></div>
+        </div>
         <div id="top-image-container">
             <img src="https://contents.kyobobook.co.kr/pmtn/2022/book/221012_sapiens/bnD_e01_01.jpg" class="top image">
         </div>

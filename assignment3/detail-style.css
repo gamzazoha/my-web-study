@@ -4,6 +4,90 @@ body {
     font-family: "Noto Sans KR", sans-serif;
 }
 
+/* for cart add modal */
+.cart-modal-container {
+    display: none;
+    
+    position: fixed;
+    z-index: 2;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* js에서 display: flex 추가했을때 사용 */
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-modal {
+    position: relative;
+    z-index: 3; /* sticky로 다른 요소에 z-index 1이 적용 되어있음 */
+
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    width: 300px; height: 140px;
+
+    padding: 10px;
+}
+
+#txt1 {
+    font-size: 20px;
+
+    margin: 0;
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+#txt2 {
+    font-size: 15px;
+
+    margin: 5px 0 20px 0;
+
+    text-align: center;
+}
+
+#btn-box {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modal-btn {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    padding: 8px 40px;
+
+    border: none;
+    border-radius: 5px;
+}
+
+#no {
+    background-color: #727272;
+}
+
+#no:hover {
+    background-color: #3f3f3f;
+}
+
+#yes {
+    background-color: #196cc5;
+}
+
+#yes:hover {
+    background-color: #0056b2;
+}
+
+.modal-layer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* *** */
+
 .menu-container > hr {
     margin-bottom: 20px;
 }
@@ -19,26 +103,45 @@ body {
 }
 
 #menu-bar > li > a {
+    position: relative;
+
+    margin-left: 5px;
+
     text-decoration: none;
     color: black;
 }
 
+#menu-bar > li > a::after {
+    content: "";
+    width: 1px; height: 15px;
+    
+    position: absolute;
+    transform: translate(5px, 60%);
+    
+    background-color: #000000;
+}
+
+#menu-bar > li > a:last-child::after {
+    content: none;
+}
+
 #size-box {
-    margin: 0px 400px 0px 400px;
+    margin: 0px 300px 0px 300px;
 }
 
 .detail-container {
     display: flex;
+
+    margin-top: 60px;
 }
 
 #image {
-    margin-top: 60px;
     width: 220px; height: 330px;
     object-fit: cover;
 }
 
 #text {
-    margin-left: 80px;
+    margin: 0 50px;
     display: inline-block;
 }
 
@@ -46,18 +149,36 @@ body {
     margin: 0;
     margin-bottom: 10px;
     border: none;
-    border-top: 1px solid #A2A2A2;
+    border-top: #A2A2A2 1px solid;
+}
+
+#book-type {
+    display: flex;
+}
+
+#book-type > p{
+    font-size: 12px;
+
+    margin: 0;
+    margin-right: 5px;
+    padding: 1px 5px;
+
+    border: #bebebe 1px solid;
+}
+
+#book-type > p:last-child{
+    margin-right: 0;
 }
 
 #title {
     font-weight: 500;
     font-size: 30px;
     margin: 0;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     color: black;
 }
 
-#author-price-box {
+#author-box {
     display: flex;
     justify-content: flex-end;
 }
@@ -67,51 +188,200 @@ body {
     display: inline-block;
 }
 
-#price {
-    margin: 0;
-    margin-left: 10px;
-    display: inline-block;
-}
-
 #info {
     word-break: keep-all;
 }
 
-.pay-container {
-    display: flex;
-    justify-content: end;
+#book-rating {
+    color: #474747;
 
-    margin: 30px 30px 30px 0;
+    display: flex;
+    align-items: center;
+
+    margin: 10px 0;
 }
 
-#add-cart-btn {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 18px;
-    border: none;
-    border-radius: 3px;
-    background-color: #eaeaea;
-    padding: 3px;
+#book-rating > p {
+    position: relative;
 
+    font-size: 13px;
+
+    margin: 0;
+    margin-left: 10px;
+}
+
+#book-rating > p:first-child {
+    margin-left: 0;
+}
+
+#book-rating > p::before {
+    content: "";
+    width: 1px; height: 15px;
+    
+    position: absolute;
+    transform: translate(-5px, 20%);
+    
+    background-color: #A2A2A2;
+}
+
+#book-rating > p:first-child::before {
+    content: none;
+}
+
+#star {
     display: flex;
-    justify-content: center;
+
     align-items: center;
 }
 
-#add-cart-btn:hover {
-    background-color: #bebebe;
+#star > span {
+    font-size: 18px;
+
+    color: #196cc5;
 }
 
-#add-cart-btn > p {
+#star-rating {
     margin: 0;
+    margin-left: 5px;
+}
+
+#side-bar {
+    box-sizing: border-box;
+
+    border: #bebebe 1px solid;
+    border-radius: 10px;
+
+    max-height: 330px;
+
+    padding: 10px;
+}
+
+#delivery-type {
+    display: inline-block;
+    font-size: 13px;
+    color: #FFFFFF;
+
+    background-color: #00448d;
+
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 1px 5px;
+}
+
+#delivery-text {
+    font-size: 15px;
+    color: #474747;
+
+    margin: 0;
+}
+
+.price-container {
+    border: #bebebe 1px solid;
+    border-left: none; border-right: none;
+
+    margin: 30px 0;
+    padding: 10px;
+}
+
+.price-text {
+    margin: 0;
+    margin-right: 10px;
+}
+
+#p-txt {
+    color: #474747;
+}
+
+#rp-txt {
+    font-weight: 500;
+    color: #000000;
+}
+
+#regular-price-container {
+    font-size: 15px;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    white-space: nowrap;
+}
+
+#regular-price {
+    margin: 0;
+}
+
+#price-container {
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+}
+
+#price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #f55151;
+
+    margin: 0;
+}
+
+.price-text {
+    white-space: nowrap;
+}
+
+
+.pay-container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+}
+
+.pay-container-btn {
+    white-space: nowrap;
+
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+
+    border: none;
+    border-radius: 3px;
+
+    /* margin: 0 10px; */
+    padding: 3px 20px;
+}
+
+.pay-container-btn > p {
+    margin: 0;
+}
+
+#add-cart-btn {
+    background-color: #196cc5;
+
+    margin-bottom: 10px;
+}
+
+#add-cart-btn:hover {
+    background-color: #0056b2;
+}
+
+#buy-btn {
+    background-color: #727272;
+}
+
+#buy-btn:hover {
+    background-color: #3f3f3f;
 }
 
 @media screen and (max-width: 1500px){
     #size-box {
-        margin: 0px 200px 0px 200px;
+        margin: 0px 100px 0px 100px;
     }
 
     #text {
-        margin-left: 50px;
+        margin: 0 40px;
     }
 
     #image {
@@ -121,26 +391,40 @@ body {
 
 @media screen and (max-width: 1300px){
     #size-box {
-        margin: 0px 50px 0px 50px;
-    }
-}
-
-@media screen and (max-width: 800px){
-    #size-box {
-        margin: 0;
-    }
-
-    #image {
-        width: 200px; height: 300px;
+        margin: 0px 10px;
     }
 
     #text {
-        margin: 0;
-        margin-left: 20px;
+        margin: 0 20px;
+    }
+
+    #title {
+        font-size: 25px;
+    }
+
+    #side-bar {
+        max-height: 300px;
+    }
+
+    #regular-price-container {
+        font-size: 13px;
+    }
+
+    #price-container {
+        font-size: 15px;
+    }
+
+    #price {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .pay-container-btn {
+        font-size: 18px;
     }
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 1100px){
     .detail-container {
         display: unset; /* flex 취소 */
     }
@@ -153,13 +437,34 @@ body {
     #image {
         margin: 0;
         max-width: 200px;
-        width: 80%;
+        /* width: 80%; */
     }
 
     #text {
         margin: 0;
+
+        min-width: 100%;
     }
 
+    #title {
+        margin-top: 10px;
+    }
+
+    #author {
+        font-size: 15px;
+    }
+
+    #book-type {
+        margin-top: 10px;
+    }
+
+    #side-bar {
+        margin: auto;
+    }
+}
+
+
+@media screen and (max-width: 550px){
     #title {
         margin-top: 10px;
         font-size: 25px;

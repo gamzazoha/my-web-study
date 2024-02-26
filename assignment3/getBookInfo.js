@@ -12,8 +12,9 @@ $.ajax({
 
         product.find("img").attr("src", result.imagePath);
         product.find("#title").text(result.title);
-        product.find("#author").text(result.author);
-        product.find("#price").text(result.price+"원");
+        product.find("#author").text(result.author+" (저자)");
+        product.find("#regular-price").text(parseInt(result.price*1.1)+"원");
+        product.find("#price").text(result.price+"원 (10% 할인)");
         product.find("#info").text(result.description);
     },
     error: function(error) {
@@ -36,3 +37,24 @@ cartAddBtn.addEventListener("click", () => {
         localStorage.setItem("itemList", JSON.stringify(items));
     }
 });
+cartAddBtn.addEventListener("click",() => {
+    // modal 보이기
+    modalFlag = 1;
+    modal.style.display = "flex";
+});
+
+//modal
+const modal = document.querySelector(".cart-modal-container");
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+let modalFlag = 0;
+
+function cartMove() {
+    // modal 가리기
+    modalFlag = 0;
+    modal.style.display = '';
+    modal.style.display = "none";
+};
+
+noBtn.addEventListener("click", cartMove);
+yesBtn.addEventListener("click", cartMove);
