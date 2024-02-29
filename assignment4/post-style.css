@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* font */
+body {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+input::placeholder {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+textarea::placeholder {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+input {
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* font */
+
+/* for modal */
+.book-modal-container {
+    display: none;
+
+    position: fixed;
+    z-index: 1;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* js에서 display: flex 추가했을때 사용 */
+    justify-content: center;
+    align-items: center;
+}
+
+.book-modal {
+    position: relative;
+    z-index: 2;
+
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    width: 300px; height: 120px;
+
+    padding: 10px;
+}
+
+#txt1 {
+    font-size: 18px;
+
+    margin: 0;
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+#btn-box {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 15px;
+}
+
+#yes {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    padding: 8px 40px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #196cc5;
+}
+
+#yes:hover {
+    background-color: #0056b2;
+}
+
+.modal-layer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* modal end */
+
+body {
+    margin: 0;
+
+    background-color: #f3f3f3;
+}
+
+.menu-container{
+    background-color: #FFFFFF;
+
+    padding: 10px 10px 0 10px;
+}
+
+.menu-container > hr {
+    margin-bottom: 20px;
+}
+
+#menu-bar {
+    margin: 0;
+    margin-left: 30px;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#menu-bar > li > a {
+    position: relative;
+
+    margin-left: 5px;
+
+    text-decoration: none;
+    color: black;
+}
+
+#menu-bar > li > a::after {
+    content: "";
+    width: 1px; height: 15px;
+    
+    position: absolute;
+    transform: translate(5px, 60%);
+    
+    background-color: #000000;
+}
+
+#menu-bar > li > a:last-child::after {
+    content: none;
+}
+
+#book-post-form {
+    margin: 30px auto;
+    padding: 20px;
+
+    width: 600px;
+    
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#form-title {
+    font-size: 20px;
+    font-weight: 700;
+
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#book-input-box {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+}
+
+.input {
+    box-sizing: border-box;
+    width: 100%;
+
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 10px;
+
+    border: #bebebe 1px solid;
+    border-radius: 3px;
+}
+
+#book-info {
+    height: 300px;
+
+    resize: none;
+}
+
+#submit-btn-container {
+    display: flex;
+
+    justify-content: end;
+}
+
+#go {
+    background-color: #196cc5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#go:hover {
+    background-color: #0056b2;
+}
+
+@media screen and (max-width: 750px){
+    #book-post-form {
+        padding: 10px;
+    
+        width: 500px;
+    }    
+}
+
+@media screen and (max-width: 650px){
+    #book-post-form {
+        width: 400px;
+    }    
+}
+
+@media screen and (max-width: 550px){
+    #book-post-form {
+        width: 300px;
+    }    
+}
+
+@media screen and (max-width: 370px){
+    #form {
+        display: flex;
+        justify-content: center;
+    }
+
+    #book-post-form {
+        margin: 30px 0;
+    }    
+}
