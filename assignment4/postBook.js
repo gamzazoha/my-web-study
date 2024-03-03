@@ -14,3 +14,25 @@ const yesBtn = document.getElementById("yes");
 yesBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
+
+//no move
+$(document).ready(function() {
+    $("#book-post-form").submit(function(event) {
+        event.preventDefault();
+        let formData = new FormData(this);
+
+        $.ajax({
+            type: "POST",
+            url: "http://43.203.50.204:8080/api/books",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                console.log("success.");
+            },
+            error: function(response) {
+                console.log("fail.");
+            }
+        });
+    });
+});
