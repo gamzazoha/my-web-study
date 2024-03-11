@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    margin: 0;
+}
+
+#content-container{
+    margin: 10px;
+}
+
+.menu-container > hr {
+    margin-bottom: 20px;
+}
+
+#menu-bar {
+    font-size: 20px;
+    font-weight: 600;
+
+    margin: 0;
+    margin-left: 30px;
+    padding: 0;
+
+    list-style: none;
+    text-decoration: none;
+}
+
+#menu-bar > li > a {
+    position: relative;
+
+    margin-left: 5px;
+
+    text-decoration: none;
+    color: black;
+}
+
+#menu-bar > li > a::after {
+    content: "";
+    width: 1px; height: 15px;
+    
+    position: absolute;
+    transform: translate(5px, 60%);
+    
+    background-color: #000000;
+}
+
+#menu-bar > li > a:last-child::after {
+    content: none;
+}
+
+.ask-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+#ask-title {
+    font-size: 20px;
+    font-weight: 600;
+
+    margin: 0;
+}
+
+#ask-ul {
+    padding: 0;
+
+    list-style: none;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 10px;
+    padding: 10px;
+
+    width: 600px;
+
+    border: #bebebe 1px solid;
+    border-radius: 3px;
+}
+
+.info-box:last-child {
+    margin: 0;
+}
+
+.question {
+    font-weight: 500;
+    
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.answer {
+    font-size: 13px;
+
+    margin: 0;
+}
+
+.menu {
+    font-size: 20px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    color: black;
+}
+
+.menu:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 700px){
+    .info-box {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .info-box {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .info-box {
+        width: 300px;
+    }
+
+    .question {
+        font-size: 16px;
+    }
+
+    .menu {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .info-box {
+        width: 270px;
+    }
+}
